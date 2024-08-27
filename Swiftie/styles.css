@@ -1,0 +1,180 @@
+body {
+    height: 100vh; /* Asegura que la altura sea 100% de la vista */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e989dc;
+    overflow: hidden; /* Elimina barras de desplazamiento */
+    cursor: default;
+}
+
+#buttons {
+    position: relative; /* Cambiado de absolute a relative */
+    top: 10px; /* Ajusta según sea necesario para que quede debajo del contenido */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    display: flex;
+    justify-content: center; /* Asegura que los botones se alineen horizontalmente */
+    gap: 10px; /* Reducido el espacio entre los botones */
+}
+
+/* Estilos para todos los botones */
+button {
+    padding: 5px 10px; /* Reducido el tamaño del botón */
+    font-size: 0.75em; /* Reducido el tamaño de la fuente */
+    cursor: pointer;
+    border: none;
+    border-radius: 12px; /* Ajustado el borde del botón */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilos para los botones "Sí" */
+#yes-button, #yes-button1, #yes-button2 {
+    background-color: green;
+    color: white;
+    cursor: url('../img/cursorsi.png'), pointer;
+}
+
+/* Estilos para los botones "No" */
+#no-button, #no-button1, #no-move {
+    background-color: red;
+    color: white;
+    cursor: url('../img/cursorno.png'), pointer;
+}
+
+#no-move {
+    width: 125px /* Establece un tamaño fijo */
+}
+
+#volver {
+    background-color: #00FF0000;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+#volver:hover {
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+    background-color: white;
+}
+
+#volver:active {
+    color: black;
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    background-color: white;
+}
+
+#corazon {
+    background-color: #00FF0000;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+}
+
+#corazon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+    background-color: #ff85c1;
+}
+
+#corazon:active {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    background-color: #ff69b4;
+}
+
+/*Partículas*/
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall 2s forwards, drift 2s ease-in-out;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px); /* Cambia el desplazamiento según lo desees */
+        opacity: 0;
+    }
+}
+
+@keyframes drift {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+.image-wrapper {
+    position: absolute;
+    transition: opacity 2s ease-in-out;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 50%; /* Ajusta el tamaño según tu preferencia */
+    height: auto;
+    opacity: 0.8; /* Transparencia general */
+    mask-image: radial-gradient(circle, black 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
+}
+.resultado {
+    max-width: 225px; /* Ajusta este valor según lo necesites */
+    width: 100%;
+}
+
+#center-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: glow 2s infinite;
+}
+
+/* Animación para el resplandor del mensaje central */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
