@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Romántica</title>
+    <link rel="icon" href="img/Amor.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <!--Las imágenes serán insertadas dinámicamente-->
+    </div>
+    <div id="center-message">
+        <div id="index-content" class="content">
+            ¿Me das el privilegio de ser tu enamorado?<br>❤️
+            <div id="buttons">
+                <button id="yes-button" onclick="showSection('si')">Sí! ❤️</button>
+                <button id="no-button" onclick="showSection('no1')">No... 😢</button>
+            </div>
+        </div>
+
+        <div id="si-content" class="content" style="display: none;">
+            <img class="resultado" src="../img/Jeje.jpg" alt="img">
+            <br>Sabía que ibas a decir que Sí❤️<br>Te amooooo!!
+            <div id="buttons">
+                <button id="volver" onclick="showSection('index')">Volver</button>
+                <button id="corazon" onclick="window.open('corazon.html', '_blank')">❤️</button>
+            </div>
+        </div>
+
+        <div id="no1-content" class="content" style="display: none;">
+            <img class="resultado" src="../img/Pipipi1.jpg" alt="img">
+            <br>¿Estás Segura? Piénsalo bien...😥
+            <div id="buttons">
+                <button id="yes-button1" onclick="showSection('si')">Sí! ❤️</button>
+                <button id="no-button1" onclick="showSection('no2')">No... 😢</button>    
+            </div>
+        </div>
+
+        <div id="no2-content" class="content" style="display: none;">
+            <img class="resultado" src="../img/Pipipi2.jpg" alt="img">
+            <br>Serás mía a las buenas o a las malas 😈
+            <div id="buttons">
+                <button id="yes-button2" onclick="showSection('si')">Sí! ❤️</button>
+                <button id="no-move" onclick="moveButton()">No... 😢</button>
+            </div>
+        </div>
+    </div>
+    <audio id="background-music" src="mp3/ADondeVamos.mp3" autoplay loop></audio>    
+    <script src="script.js"></script>
+</body>
+</html>
